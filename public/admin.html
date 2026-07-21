@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas Agendadas - The Black Studio</title>
+    <link rel="icon" href="/images/logoblack.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-navbar">
+            <div class="brand-container">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="/images/logoblack.png" alt="Logo The Black Studio" class="logo">
+                    <div class="brand-text">
+                        <h1 class="brand-title" style="margin: 0; color: #fff;">The Black Studio</h1>
+                        <span class="brand-subtitle">ADMINISTRACIÓN</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-buttons">
+                <a href="#" id="btnCerrarSesionAdmin" class="btn-outline-silver">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-page-bg">
+        <div class="admin-contenedor">
+
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <h2>Citas agendadas</h2>
+                    <button id="btnActualizarCitas" class="btn-admin">Actualizar</button>
+                </div>
+
+                <div id="adminMensaje" class="admin-mensaje">
+                    Cargando citas...
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Correo</th>
+                                <th>Servicio</th>
+                                <th>Barbero</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Comentarios</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCitasAdmin">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const usuarioGuardado = localStorage.getItem('usuarioBlackhub');
+
+            if (!usuarioGuardado) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            let usuario;
+
+            try {
+                usuario = JSON.parse(usuarioGuardado);
+            } catch (error) {
+                localStorage.removeItem('usuarioBlackhub');
+                window.location.href = '/login.html';
+                return;
+            }
+
+            if (usuario.Rol !== 'admin') {
+                Swal.fire({
+                    title: 'Acceso denegado',
+                    text: 'No tienes permisos para entrar al panel de administrador.',
+                    icon: 'error',
+                    background: '#121212',
+                    color: '#ffffff',
+                    confirmButtonColor: '#4a3506'
+                }).then(() => {
+                    window.location.href = '/index.html';
+                });
+                return;
+            }
+
+            const tablaCitasAdmin = document.getElementById('tablaCitasAdmin');
+            const adminMensaje = document.getElementById('adminMensaje');
+            const btnActualizarCitas = document.getElementById('btnActualizarCitas');
+            const btnCerrarSesionAdmin = document.getElementById('btnCerrarSesionAdmin');
+
+            function formatearFecha(fecha) {
+                if (!fecha) return 'Sin fecha';
+
+                const fechaObj = new Date(fecha);
+                const dia = String(fechaObj.getDate()).padStart(2, '0');
+                const mes = String(fechaObj.getMonth() + 1).padStart(2, '0');
+                const anio = fechaObj.getFullYear();
+
+                return `${dia}/${mes}/${anio}`;
+            }
+
+            function formatearHora(hora) {
+                if (!hora) return 'Sin hora';
+
+                const partes = hora.split(':');
+                const horas = Number(partes[0]);
+                const minutos = partes[1] || '00';
+
+                const periodo = horas >= 12 ? 'PM' : 'AM';
+                const horas12 = horas % 12 || 12;
+
+                return `${horas12}:${minutos} ${periodo}`;
+            }
+
+            async function cargarCitas() {
+                try {
+                    adminMensaje.textContent = 'Cargando citas...';
+                    tablaCitasAdmin.innerHTML = '';
+
+                    const respuesta = await fetch('/api/admin/citas');
+                    const data = await respuesta.json();
+
+                    if (!data.success) {
+                        adminMensaje.textContent = data.mensaje || 'No se pudieron cargar las citas.';
+                        return;
+                    }
+
+                    if (data.citas.length === 0) {
+                        adminMensaje.textContent = 'Aún no hay citas registradas.';
+                        return;
+                    }
+
+                    adminMensaje.textContent = `Total de citas registradas: ${data.citas.length}`;
+
+                    data.citas.forEach(cita => {
+                        const fila = document.createElement('tr');
+
+                        fila.innerHTML = `
+                            <td>${cita.ID_Cita}</td>
+                            <td>${cita.Nombre} ${cita.Apellido}</td>
+                            <td>${cita.Correo}</td>
+                            <td>${cita.Servicio}</td>
+                            <td>${cita.Barbero}</td>
+                            <td>${formatearFecha(cita.Fecha)}</td>
+                            <td>${formatearHora(cita.Hora)}</td>
+                            <td>${cita.Comentarios || 'Sin comentarios'}</td>
+                            <td><span class="estado-cita">${cita.Estado}</span></td>
+                        `;
+
+                        tablaCitasAdmin.appendChild(fila);
+                    });
+
+                } catch (error) {
+                    console.error('Error al cargar citas:', error);
+                    adminMensaje.textContent = 'Error al conectar con el servidor.';
+                }
+            }
+
+            btnActualizarCitas.addEventListener('click', cargarCitas);
+
+            btnCerrarSesionAdmin.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                Swal.fire({
+                    title: '¿Cerrar sesión?',
+                    text: 'Saldrás del panel de administrador.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    background: '#121212',
+                    color: '#ffffff',
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#222222',
+                    confirmButtonText: 'Sí, salir',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.removeItem('usuarioBlackhub');
+                        window.location.href = '/login.html';
+                    }
+                });
+            });
+
+            cargarCitas();
+        });
+    </script>
+</body>
+</html>

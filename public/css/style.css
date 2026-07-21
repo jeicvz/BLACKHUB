@@ -1,0 +1,2044 @@
+/* Importando tipografías callejeras y elegantes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Oswald:wght@400;500;700&display=swap');
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- BLOQUEO CONTRA BOOTSTRAP (Adiós letras azules horribles) --- */
+a {
+    text-decoration: none !important;
+    color: inherit; 
+}
+
+a:hover {
+    color: inherit;
+}
+
+body {
+    font-family: 'Oswald', sans-serif; 
+    background-color: #080808; 
+    color: #ffffff;
+}
+
+/* --- BARRA PRINCIPAL --- */
+.main-navbar {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; 
+}
+
+/* --- SECCIÓN DEL LOGO Y TÍTULO --- */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.logo {
+    height: 90px; 
+    width: auto;
+    border-radius: 50%; 
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-title {
+    font-family: 'New Rocker', cursive; 
+    color: #ffffff;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: -4px; 
+}
+
+.brand-subtitle {
+    font-family: 'Oswald', sans-serif;
+    color: #555555; 
+    font-size: 14px;
+    letter-spacing: 4px; 
+}
+
+/* --- BOTONES DE INICIAR SESIÓN / REGISTRO --- */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline-silver {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid #4a3506; 
+    padding: 8px 22px;
+    border-radius: 3px; 
+    font-weight: 500;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-silver:hover {
+    background-color: rgba(74, 53, 6, 0.18);
+    color: #ffffff;
+    border-color: #624708;
+}
+
+/* --- SUB BARRA DE NAVEGACIÓN --- */
+.sub-navbar {
+    background-color: #000000;
+    border-top: 2px solid #4a3506; 
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    margin: 0; 
+    padding: 0; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #cccccc; 
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative; 
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4a3506; 
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff; 
+}
+
+.btn-agendar {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA DE LOGIN Y REGISTRO
+   ========================================= */
+
+.flex-center { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.w-100 { width: 100%; }
+
+.flex-row { 
+    display: flex; 
+    gap: 15px; 
+}
+
+.flex-col { 
+    flex: 1; 
+}
+
+.login-wrapper {
+    min-height: 100vh; 
+    padding: 40px 20px;
+    position: relative; 
+    background-image: url('/images/lgblck.png');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.login-card {
+    background-color: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 8px;
+    padding: 60px 40px; 
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.95);
+    position: relative; 
+    z-index: 10;
+    margin-top: 0; 
+}
+
+.login-logo {
+    width: 120px; 
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.login-title-metal {
+    font-family: 'New Rocker', cursive; 
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 50px; 
+    margin: 0 0 30px 0;
+    line-height: 1;
+    text-transform: uppercase; 
+}
+
+.form-label-custom {
+    display: block; 
+    color: #ffffff !important; 
+    margin-bottom: 0.5rem; 
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.input-group { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+.input-icon { 
+    position: absolute; 
+    left: 12px; 
+    color: #4a3506 !important; 
+    width: 18px; 
+    height: 18px; 
+    pointer-events: none; 
+}
+
+.toggle-password {
+    position: absolute; 
+    right: 12px; 
+    color: #4a3506; 
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    z-index: 5; 
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover { 
+    color: #ffffff; 
+}
+
+.custom-input {
+    width: 100%; 
+    display: block; 
+    box-sizing: border-box; 
+    padding-left: 40px !important; 
+    padding-right: 40px !important; 
+    background-color: #1a1a1a !important; 
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+.custom-input:focus {
+    border-color: #4a3506 !important; 
+    background-color: #1a1a1a !important;
+    box-shadow: none !important;
+    outline: none;
+}
+
+.buttons-row { 
+    display: flex; 
+    gap: 15px; 
+    width: 100%; 
+    margin-top: 25px; 
+}
+
+.btn-row {
+    flex: 1; 
+    text-align: center; 
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.btn-silver {
+    background-color: #E0E0E0;
+    color: #000000;
+    border-radius: 4px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid #E0E0E0;
+    cursor: pointer;
+}
+
+.btn-silver:hover {
+    background-color: transparent;
+    color: #E0E0E0;
+}
+
+.btn-back { 
+    background-color: transparent; 
+    color: #E0E0E0; 
+    border: 2px solid #E0E0E0; 
+}
+
+.btn-back:hover { 
+    border-color: #4a3506 !important; 
+    color: #4a3506 !important; 
+}
+
+.btn-silver.gold-hover:hover { 
+    border-color: #4a3506 !important; 
+    color: #4a3506 !important; 
+    background-color: transparent; 
+}
+
+.register-link {
+    color: #4a3506 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA DE INICIO
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(90deg, rgba(8,8,8,1) 0%, rgba(8,8,8,0.7) 50%, rgba(8,8,8,0) 100%), url('/images/hero-barber.jpg') center right/cover no-repeat;
+    min-height: 85vh; 
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.hero-content { 
+    max-width: 800px; 
+} 
+
+.hero-pretitle {
+    color: #4a3506; 
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-pretitle::before, 
+.hero-pretitle::after { 
+    content: ""; 
+    height: 1px; 
+    width: 30px; 
+    background-color: #4a3506; 
+}
+
+.hero-title {
+    font-family: 'New Rocker', cursive; 
+    font-size: 70px; 
+    font-weight: 400; 
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-desc {
+    color: #aaaaaa;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    margin-bottom: 50px; 
+}
+
+.btn-hero {
+    display: flex; 
+    align-items: center; 
+    gap: 0;
+    background-color: transparent; 
+    border: 2px solid #4a3506; 
+    padding: 15px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero svg {
+    display: none;
+}
+
+.btn-hero span {
+    color: #aaaaaa; 
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.btn-hero:hover { 
+    background-color: rgba(95, 70, 8, 0.05); 
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.2); 
+}
+
+.btn-hero:hover span {
+    color: #ffffff; 
+}
+
+.services-section {
+    padding: 0 50px;
+    margin-top: -60px; 
+    position: relative;
+    z-index: 10;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.srv-card {
+    background-color: #111;
+    border: 2px solid #4a3506; 
+    border-radius: 6px;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    text-decoration: none; 
+}
+
+.srv-card:hover { 
+    transform: translateY(-10px); 
+    border-color: #624708; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
+}
+
+.bg-1 { 
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), url('/images/srv-corte.jpg') center/cover; 
+}
+
+.bg-2 { 
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), url('/images/srv-afeitado.jpg') center/cover; 
+}
+
+.bg-3 { 
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), url('/images/srv-barba.jpg') center/cover; 
+}
+
+.bg-4 { 
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), url('/images/srv-mas.jpg') center/cover; 
+    cursor: pointer; 
+}
+
+.srv-img-icon { 
+    width: 62px; 
+    height: 62px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 20px; 
+    filter: grayscale(20%);
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.srv-card:hover .srv-img-icon { 
+    transform: scale(1.08); 
+    filter: grayscale(0%);
+}
+
+.srv-icon {
+    display: none;
+}
+
+.srv-title { 
+    font-size: 20px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    margin: 0 0 10px 0; 
+    color: #fff; 
+}
+
+.srv-desc { 
+    font-size: 14px; 
+    color: #888; 
+    font-weight: 300; 
+    margin: 0 0 15px 0; 
+    line-height: 1.4; 
+    transition: color 0.3s; 
+}
+
+.srv-line { 
+    height: 2px; 
+    width: 30px; 
+    background-color: #4a3506; 
+    transition: width 0.3s; 
+}
+
+.srv-card:hover .srv-line { 
+    width: 50px; 
+}
+
+.srv-card:hover .srv-desc { 
+    color: #ccc; 
+}
+
+.about-section {
+    padding: 100px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.95)), url('/images/lgblck.png') center/cover no-repeat;
+}
+
+.about-text .hero-pretitle { 
+    margin-bottom: 15px; 
+}
+
+.about-title { 
+    font-family: 'New Rocker', cursive; 
+    font-size: 55px; 
+    font-weight: 400;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    line-height: 1.1; 
+    margin: 0 0 20px 0; 
+}
+
+.about-desc { 
+    color: #aaaaaa; 
+    font-weight: 300; 
+    font-size: 16px; 
+    margin-bottom: 30px; 
+    line-height: 1.6; 
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.about-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: none; 
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+    transform: translateY(-5px);
+}
+
+.btn-outline-custom {
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    border: 2px solid #4a3506; 
+    color: #ffffff; 
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    background-color: transparent;
+}
+
+.btn-outline-custom:hover { 
+    background-color: rgba(95, 70, 8, 0.1);
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA EL FOOTER
+   ========================================= */
+
+.main-footer {
+    background-color: #000000;
+    border-top: 1px solid #222222; 
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.footer-link svg {
+    color: #4a3506 !important;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-link span {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: translateY(-3px); 
+}
+
+.footer-link:hover span {
+    color: #4a3506 !important;
+}
+
+.footer-link:hover svg {
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    color: #444444; 
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA NOSOTROS
+   ========================================= */
+
+.nosotros-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.66), rgba(8, 8, 8, 0.84)),
+        url('/images/servicios-bg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.nosotros-section {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 90px 25px 110px 25px;
+}
+
+.nosotros-encabezado {
+    max-width: 900px;
+    margin: 0 auto 75px auto;
+    text-align: center;
+}
+
+.nosotros-pretitle {
+    display: inline-block;
+    font-family: 'New Rocker', cursive;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.nosotros-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+.nosotros-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nosotros-text-main {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.nosotros-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 75px;
+}
+
+.nosotros-card {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 42px 35px;
+    min-height: 280px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.nosotros-card:hover {
+    border-top-color: #624708;
+    transform: translateY(-5px);
+    box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.nosotros-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.nosotros-card .nosotros-text {
+    color: #8a8a8a;
+}
+
+.nosotros-ubicacion {
+    margin-top: 60px;
+}
+
+.nosotros-map-wrapper {
+    background-color: rgba(13, 13, 13, 0.90);
+    padding: 28px;
+    border-radius: 8px;
+    border: 2px solid #4a3506;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(2px);
+}
+
+.nosotros-map-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    color: #6b6b6b;
+    margin-bottom: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.nosotros-map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid #1a1a1a;
+}
+
+@media (max-width: 900px) {
+    .nosotros-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .nosotros-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .nosotros-section {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .nosotros-encabezado {
+        margin-bottom: 55px;
+    }
+
+    .nosotros-title {
+        font-size: 46px;
+    }
+
+    .nosotros-pretitle {
+        font-size: 24px;
+    }
+
+    .nosotros-subtitle {
+        font-size: 24px;
+    }
+
+    .nosotros-text {
+        font-size: 17px;
+    }
+
+    .nosotros-card {
+        padding: 30px 24px;
+    }
+
+    .nosotros-map-wrapper {
+        padding: 20px;
+    }
+
+    .nosotros-map-container {
+        height: 350px;
+    }
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA SERVICIOS
+   ========================================= */
+
+.servicios-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.66), rgba(8, 8, 8, 0.84)),
+        url('/images/servicios-bg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.servicios-contenedor {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 90px 25px 110px 25px;
+}
+
+.servicios-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 70px auto;
+}
+
+.servicios-pretitle {
+    display: inline-block;
+    font-family: 'New Rocker', cursive;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.servicios-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+.servicios-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.servicios-grid-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 75px;
+}
+
+.servicio-card-page {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 38px 28px;
+    min-height: 285px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.servicio-card-page:hover {
+    border-top-color: #624708;
+    transform: translateY(-5px);
+    box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+.servicio-nombre {
+    font-family: 'New Rocker', cursive;
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.servicio-descripcion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #bfbfbf;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.servicio-precio {
+    display: inline-block;
+    font-family: 'New Rocker', cursive;
+    font-size: 38px;
+    color: #6b6b6b;
+    letter-spacing: 1px;
+}
+
+.servicios-horarios {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    align-items: center;
+    margin-bottom: 75px;
+}
+
+.servicios-horarios-info {
+    background-color: rgba(13, 13, 13, 0.88);
+    border: 1px solid #222222;
+    border-left: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 38px 35px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.servicios-mini-title {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    color: #4a3506;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.servicios-horarios-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.servicios-horarios-info p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.servicios-schedule-card {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 38px 40px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.servicios-schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #1f1f1f;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+.servicios-schedule-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.servicios-schedule-day {
+    color: #cccccc;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.servicios-schedule-time {
+    color: #6b6b6b;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.servicios-cta {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-left: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 35px 40px;
+    text-align: center;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.servicios-cta p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.btn-servicios-page {
+    display: inline-block;
+    border: 2px solid #4a3506;
+    color: #ffffff;
+    padding: 13px 32px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-servicios-page:hover {
+    background-color: rgba(95, 70, 8, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+}
+
+@media (max-width: 1100px) {
+    .servicios-grid-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .servicios-horarios {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicios-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .servicios-contenedor {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .servicios-title {
+        font-size: 46px;
+    }
+
+    .servicios-pretitle {
+        font-size: 24px;
+    }
+
+    .servicios-grid-page {
+        grid-template-columns: 1fr;
+    }
+
+    .servicio-card-page {
+        min-height: auto;
+        padding: 32px 25px;
+    }
+
+    .servicio-nombre {
+        font-size: 32px;
+    }
+
+    .servicio-precio {
+        font-size: 34px;
+    }
+
+    .servicios-horarios-info {
+        padding: 32px 25px;
+    }
+
+    .servicios-horarios-title {
+        font-size: 36px;
+    }
+
+    .servicios-schedule-card {
+        padding: 30px 25px;
+    }
+
+    .servicios-schedule-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .servicios-schedule-time {
+        font-size: 18px;
+    }
+
+    .servicios-cta {
+        padding: 30px 24px;
+    }
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA GALERÍA
+   ========================================= */
+
+.galeria-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.55), rgba(8, 8, 8, 0.82)),
+        url('/images/bckgrnd.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.galeria-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 85px 25px 100px 25px;
+}
+
+.galeria-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 55px auto;
+}
+
+.galeria-pretitle {
+    display: inline-block;
+    font-family: 'New Rocker', cursive;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.galeria-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.galeria-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.galeria-mini-cta {
+    margin-top: 22px;
+}
+
+.galeria-mini-cta p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.btn-galeria-page {
+    display: inline-block;
+    border: 2px solid #4a3506;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-galeria-page:hover {
+    background-color: rgba(95, 70, 8, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+.galeria-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.galeria-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.9);
+}
+
+.galeria-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: grayscale(15%);
+    transition: all 0.4s ease;
+}
+
+.galeria-card:hover .galeria-img {
+    filter: grayscale(0%);
+    transform: scale(1.06);
+}
+
+@media (max-width: 1200px) {
+    .galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .galeria-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .galeria-card {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .galeria-contenedor {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .galeria-title {
+        font-size: 46px;
+    }
+
+    .galeria-pretitle {
+        font-size: 24px;
+    }
+
+    .galeria-desc {
+        font-size: 17px;
+    }
+
+    .galeria-mini-cta p {
+        font-size: 17px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .galeria-card {
+        height: 230px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-card {
+        height: 280px;
+    }
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA CONTACTO
+   ========================================= */
+
+.contacto-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.58), rgba(8, 8, 8, 0.86)),
+        url('/images/bckgrnd.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.contacto-contenedor {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 90px 25px 110px 25px;
+}
+
+.contacto-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 65px auto;
+}
+
+.contacto-pretitle {
+    display: inline-block;
+    font-family: 'New Rocker', cursive;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.contacto-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.contacto-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 70px;
+}
+
+.contacto-card {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 40px 32px;
+    min-height: 315px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacto-card:hover {
+    border-top-color: #624708;
+    transform: translateY(-6px);
+    box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.9);
+}
+
+.contacto-icon {
+    color: #4a3506;
+    margin-bottom: 20px;
+}
+
+.contacto-card h2 {
+    font-family: 'New Rocker', cursive;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.contacto-card p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #bfbfbf;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.contacto-card span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    color: #6b6b6b;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contacto-info-extra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.contacto-info-box {
+    background-color: rgba(13, 13, 13, 0.90);
+    border: 1px solid #222222;
+    border-left: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 35px 38px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.contacto-info-box h2 {
+    font-family: 'New Rocker', cursive;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.contacto-info-box p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.btn-contacto-page {
+    display: inline-block;
+    margin-top: 22px;
+    border: 2px solid #4a3506;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-contacto-page:hover {
+    background-color: rgba(95, 70, 8, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+}
+
+.contacto-mini-map {
+    width: 100%;
+    height: 230px;
+    margin-top: 25px;
+    border: 2px solid #4a3506;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.75);
+}
+
+.contacto-mini-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.contacto-agenda-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacto-pasos {
+    margin-top: 25px;
+    margin-bottom: 28px;
+}
+
+.contacto-paso {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.contacto-paso:last-child {
+    border-bottom: none;
+}
+
+.contacto-paso span {
+    font-family: 'New Rocker', cursive;
+    font-size: 26px;
+    color: #4a3506;
+    min-width: 45px;
+}
+
+.contacto-paso p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #cccccc;
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1000px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-card {
+        min-height: auto;
+    }
+
+    .contacto-info-extra {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .contacto-contenedor {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .contacto-title {
+        font-size: 46px;
+    }
+
+    .contacto-pretitle {
+        font-size: 24px;
+    }
+
+    .contacto-desc {
+        font-size: 17px;
+    }
+
+    .contacto-card {
+        padding: 32px 25px;
+    }
+
+    .contacto-card h2 {
+        font-size: 32px;
+    }
+
+    .contacto-info-box {
+        padding: 30px 25px;
+    }
+
+    .contacto-info-box h2 {
+        font-size: 32px;
+    }
+}
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA AGENDAR CITA
+   ========================================= */
+
+.agendar-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.66), rgba(8, 8, 8, 0.84)),
+        url('/images/servicios-bg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.agendar-contenedor {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 90px 25px 110px 25px;
+}
+
+.agendar-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+}
+
+.agendar-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+.agendar-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.agendar-login-box,
+.agendar-form-box {
+    background-color: rgba(13, 13, 13, 0.92);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 45px 42px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.agendar-login-box {
+    text-align: center;
+    display: none;
+}
+
+.agendar-login-box h2 {
+    font-family: 'New Rocker', cursive;
+    font-size: 46px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.agendar-login-box p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+}
+
+.agendar-login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.agendar-user-info {
+    background-color: rgba(8, 8, 8, 0.90);
+    border-left: 4px solid #4a3506;
+    padding: 18px 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+.agendar-user-info span {
+    color: #cccccc;
+    text-transform: uppercase;
+    margin-right: 8px;
+}
+
+.agendar-user-info strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.form-row-agendar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group-agendar {
+    margin-bottom: 22px;
+}
+
+.form-group-agendar label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-group-agendar input,
+.form-group-agendar select,
+.form-group-agendar textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 12px 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group-agendar input:focus,
+.form-group-agendar select:focus,
+.form-group-agendar textarea:focus {
+    border-color: #4a3506;
+    box-shadow: 0 0 12px rgba(95, 70, 8, 0.25);
+}
+
+.form-group-agendar textarea {
+    resize: none;
+}
+
+.btn-agendar-page {
+    display: inline-block;
+    border: 2px solid #4a3506;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+button.btn-agendar-page {
+    width: 100%;
+}
+
+.btn-agendar-page:hover {
+    background-color: rgba(95, 70, 8, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+}
+
+.btn-agendar-secondary {
+    border-color: #E0E0E0;
+}
+
+.btn-agendar-secondary:hover {
+    border-color: #4a3506;
+}
+
+@media (max-width: 768px) {
+    .agendar-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .agendar-contenedor {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .agendar-title {
+        font-size: 46px;
+    }
+
+    .agendar-desc {
+        font-size: 17px;
+    }
+
+    .agendar-login-box,
+    .agendar-form-box {
+        padding: 32px 25px;
+    }
+
+    .agendar-login-box h2 {
+        font-size: 36px;
+    }
+
+    .form-row-agendar {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA PANEL ADMIN
+   ========================================= */
+
+.admin-page-bg {
+    background: 
+        linear-gradient(rgba(8, 8, 8, 0.66), rgba(8, 8, 8, 0.88)),
+        url('/images/servicios-bg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.admin-contenedor {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 90px 25px 110px 25px;
+}
+
+.admin-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+}
+
+.admin-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.admin-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.admin-panel {
+    background-color: rgba(13, 13, 13, 0.92);
+    border: 1px solid #222222;
+    border-top: 4px solid #4a3506;
+    border-radius: 8px;
+    padding: 35px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.admin-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.admin-panel-header h2 {
+    font-family: 'New Rocker', cursive;
+    font-size: 42px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+}
+
+.btn-admin {
+    border: 2px solid #4a3506;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-admin:hover {
+    background-color: rgba(74, 53, 6, 0.18);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(74, 53, 6, 0.35);
+}
+
+.admin-mensaje {
+    font-family: 'Oswald', sans-serif;
+    color: #cccccc;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Oswald', sans-serif;
+    min-width: 1000px;
+}
+
+.admin-table thead {
+    background-color: #000000;
+}
+
+.admin-table th {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 15px 14px;
+    border-bottom: 2px solid #4a3506;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    color: #cccccc;
+    font-size: 15px;
+    padding: 14px;
+    border-bottom: 1px solid #222222;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.035);
+}
+
+.estado-cita {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #4a3506;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .admin-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .admin-contenedor {
+        padding: 65px 18px 85px 18px;
+    }
+
+    .admin-title {
+        font-size: 46px;
+    }
+
+    .admin-desc {
+        font-size: 17px;
+    }
+
+    .admin-panel {
+        padding: 28px 20px;
+    }
+
+    .admin-panel-header h2 {
+        font-size: 34px;
+    }
+}/* =========================================
+   ESTILOS PARA RECUPERAR CONTRASEÑA
+   ========================================= */
+
+.forgot-password-row {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: -5px;
+}
+
+.forgot-password-link {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #cccccc;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+.recuperar-card {
+    max-width: 520px;
+}
+
+.recuperar-desc {
+    font-family: 'Oswald', sans-serif;
+    color: #cccccc;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-top: -8px;
+    margin-bottom: 32px;
+}
