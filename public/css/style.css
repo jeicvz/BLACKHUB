@@ -2042,3 +2042,741 @@ button.btn-agendar-page {
     margin-top: -8px;
     margin-bottom: 32px;
 }
+/* =========================================
+   RESPONSIVE GENERAL BLACKHUB
+   PEGAR HASTA ABAJO DEL STYLE.CSS
+   ========================================= */
+
+/* Evita scroll horizontal por elementos muy grandes */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================
+   TABLETS
+   ========================= */
+@media (max-width: 992px) {
+
+    /* HEADER / NAVBAR */
+    .main-navbar {
+        padding: 18px 25px;
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .brand-container a,
+    .brand-container > div {
+        justify-content: center;
+    }
+
+    .brand-title {
+        font-size: 28px !important;
+        text-align: center;
+    }
+
+    .brand-subtitle {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn-outline-silver {
+        padding: 9px 18px;
+        font-size: 14px;
+    }
+
+    .sub-navbar {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 15px;
+        padding: 9px 12px;
+    }
+
+    /* INDEX - HERO */
+    .hero-section {
+        min-height: 75vh;
+        padding: 90px 25px;
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 70px;
+        line-height: 1;
+    }
+
+    .hero-desc {
+        font-size: 20px;
+        margin: 25px auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* INDEX - SERVICIOS CARDS */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .srv-card {
+        min-height: 280px;
+    }
+
+    /* INDEX - ABOUT */
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 70px 35px;
+        text-align: center;
+    }
+
+    .about-text {
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .about-desc {
+        margin: 0 auto 25px auto;
+    }
+
+    .about-images {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* SECCIONES INTERNAS */
+    .nosotros-section,
+    .servicios-contenedor,
+    .galeria-contenedor,
+    .contacto-contenedor,
+    .agendar-contenedor,
+    .admin-contenedor {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .servicios-grid-page,
+    .servicios-grid,
+    .contacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto-info-extra {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ADMIN */
+    .admin-panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-table-wrapper {
+        overflow-x: auto;
+    }
+}
+
+
+/* =========================
+   CELULARES
+   ========================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .main-header {
+        position: relative;
+    }
+
+    .main-navbar {
+        padding: 16px 18px;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .brand-title {
+        font-size: 24px !important;
+        letter-spacing: 1px;
+    }
+
+    .brand-subtitle {
+        font-size: 12px;
+    }
+
+    .auth-buttons {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .auth-buttons span {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin-right: 0 !important;
+        font-size: 15px !important;
+    }
+
+    .btn-outline-silver {
+        flex: 1;
+        min-width: 130px;
+        text-align: center;
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+
+    .sub-navbar {
+        padding: 10px 12px;
+        overflow-x: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        width: max-content;
+        min-width: 100%;
+        padding: 0 5px;
+    }
+
+    .nav-links li {
+        flex: 0 0 auto;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 11px;
+        white-space: nowrap;
+    }
+
+    .btn-agendar {
+        padding: 8px 12px !important;
+    }
+
+    /* INDEX - HERO */
+    .hero-section {
+        min-height: 72vh;
+        padding: 80px 20px;
+        background-position: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-pretitle {
+        font-size: 16px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        line-height: 1.05;
+        letter-spacing: 2px;
+    }
+
+    .hero-desc {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 22px auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 14px;
+    }
+
+    .btn-hero {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 13px 18px;
+    }
+
+    /* INDEX - CARDS */
+    .services-section {
+        padding: 55px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .srv-card {
+        min-height: auto;
+        padding: 35px 25px;
+    }
+
+    .srv-title {
+        font-size: 25px;
+    }
+
+    .srv-desc {
+        font-size: 16px;
+    }
+
+    /* INDEX - ABOUT */
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-title {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .about-desc {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .about-images {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-img {
+        height: 240px;
+        object-fit: cover;
+    }
+
+    /* FOOTER */
+    .main-footer {
+        padding: 35px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .footer-link {
+        justify-content: center;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    /* LOGIN / REGISTRO / RECUPERAR */
+    .login-wrapper {
+        min-height: 100vh;
+        padding: 35px 18px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 430px;
+        padding: 35px 24px;
+    }
+
+    .login-logo {
+        width: 115px;
+    }
+
+    .login-title-metal {
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    .form-label-custom {
+        font-size: 14px;
+    }
+
+    .custom-input {
+        font-size: 15px;
+        padding: 13px 45px;
+    }
+
+    .buttons-row {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .btn-row {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forgot-password-row {
+        margin-bottom: 25px;
+    }
+
+    .recuperar-desc {
+        font-size: 15px;
+    }
+
+    /* NOSOTROS */
+    .nosotros-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .nosotros-section {
+        padding: 60px 18px 80px 18px;
+    }
+
+    .nosotros-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    .nosotros-desc,
+    .nosotros-text {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .nosotros-card {
+        padding: 30px 24px;
+    }
+
+    .ubicacion-mapa,
+    .contacto-mini-map {
+        height: 280px;
+    }
+
+    /* SERVICIOS */
+    .servicios-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .servicios-contenedor {
+        padding: 60px 18px 80px 18px;
+    }
+
+    .servicios-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    .servicios-desc {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .servicios-grid-page,
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .servicio-card,
+    .servicios-horarios,
+    .servicios-cta {
+        padding: 30px 24px;
+    }
+
+    .servicio-card h2,
+    .servicios-horarios h2,
+    .servicios-cta h2 {
+        font-size: 30px;
+    }
+
+    .servicio-price {
+        font-size: 28px;
+    }
+
+    /* GALERÍA */
+    .galeria-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .galeria-contenedor {
+        padding: 60px 18px 80px 18px;
+    }
+
+    .galeria-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    .galeria-desc {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .galeria-card {
+        height: 300px;
+    }
+
+    .galeria-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* CONTACTO */
+    .contacto-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .contacto-contenedor {
+        padding: 60px 18px 80px 18px;
+    }
+
+    .contacto-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    .contacto-desc {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .contacto-card,
+    .contacto-info-box {
+        padding: 30px 24px;
+    }
+
+    .contacto-card h2,
+    .contacto-info-box h2 {
+        font-size: 32px;
+    }
+
+    .contacto-paso {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .btn-contacto-page {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* AGENDAR */
+    .agendar-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .agendar-contenedor {
+        padding: 60px 18px 80px 18px;
+    }
+
+    .agendar-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+
+    .agendar-desc {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .agendar-login-box,
+    .agendar-form-box {
+        padding: 32px 24px;
+    }
+
+    .agendar-login-box h2 {
+        font-size: 38px;
+    }
+
+    .form-row-agendar {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group-agendar input,
+    .form-group-agendar select,
+    .form-group-agendar textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .agendar-login-buttons {
+        flex-direction: column;
+    }
+
+    .btn-agendar-page {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ADMIN */
+    .admin-page-bg {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .admin-contenedor {
+        padding: 55px 15px 80px 15px;
+    }
+
+    .admin-panel {
+        padding: 25px 18px;
+    }
+
+    .admin-panel-header {
+        align-items: stretch;
+    }
+
+    .admin-panel-header h2 {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .btn-admin {
+        width: 100%;
+    }
+
+    .admin-mensaje {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .admin-table {
+        min-width: 950px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+   ========================= */
+@media (max-width: 480px) {
+
+    .brand-title {
+        font-size: 21px !important;
+    }
+
+    .brand-subtitle {
+        font-size: 11px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+    }
+
+    .btn-outline-silver {
+        width: 100%;
+    }
+
+    .hero-title,
+    .nosotros-title,
+    .servicios-title,
+    .galeria-title,
+    .contacto-title,
+    .agendar-title {
+        font-size: 40px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .login-title-metal {
+        font-size: 38px;
+    }
+
+    .login-logo {
+        width: 100px;
+    }
+
+    .custom-input {
+        padding-left: 42px;
+        padding-right: 42px;
+    }
+
+    .input-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .toggle-password {
+        width: 20px;
+        height: 20px;
+    }
+
+    .srv-card,
+    .servicio-card,
+    .contacto-card,
+    .contacto-info-box,
+    .agendar-login-box,
+    .agendar-form-box,
+    .admin-panel {
+        padding: 26px 20px;
+    }
+
+    .galeria-card {
+        height: 260px;
+    }
+
+    .ubicacion-mapa,
+    .contacto-mini-map {
+        height: 250px;
+    }
+}
