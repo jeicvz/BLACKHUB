@@ -84,7 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         localStorage.removeItem('usuarioBlackhub');
-                        window.location.href = '/index.html';
+
+                        Swal.fire({
+                            title: 'Sesión cerrada',
+                            text: 'Se ha cerrado sesión satisfactoriamente.',
+                            icon: 'success',
+                            background: '#121212',
+                            color: '#ffffff',
+                            confirmButtonColor: '#D4AF37',
+                            confirmButtonText: 'Aceptar'
+                        }).then(() => {
+                            window.location.href = '/index.html';
+                        });
                     }
                 });
             });
