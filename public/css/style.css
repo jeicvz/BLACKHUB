@@ -1,5 +1,5 @@
 /* Importando tipografías callejeras y elegantes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Oswald:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=New+Rocker&family=Oswald:wght@300;400;500;700&display=swap');
 
 /* Reseteo básico */
 * {
@@ -25,25 +25,41 @@ body {
 }
 
 /* --- BARRA PRINCIPAL --- */
-.main-navbar {
+.main-header {
     background-color: #000000;
+}
+
+.main-navbar {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+        url('/images/navimg.png') center/cover no-repeat;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px; 
+    gap: 30px;
+    padding: 10px 40px;
+    border-bottom: none;
 }
 
 /* --- SECCIÓN DEL LOGO Y TÍTULO --- */
 .brand-container {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
+    flex: 0 0 auto;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
 }
 
 .logo {
-    height: 90px; 
+    height: 90px;
     width: auto;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .brand-text {
@@ -53,71 +69,43 @@ body {
 }
 
 .brand-title {
-    font-family: 'New Rocker', cursive; 
+    font-family: 'New Rocker', cursive;
     color: #ffffff;
     font-size: 26px;
     letter-spacing: 1px;
-    margin-bottom: -4px; 
+    margin: 0;
 }
 
 .brand-subtitle {
     font-family: 'Oswald', sans-serif;
-    color: #555555; 
+    color: #555555;
     font-size: 14px;
-    letter-spacing: 4px; 
+    letter-spacing: 4px;
 }
 
-/* --- BOTONES DE INICIAR SESIÓN / REGISTRO --- */
-.auth-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-outline-silver {
-    text-decoration: none;
-    color: #ffffff;
-    border: 2px solid #4a3506; 
-    padding: 8px 22px;
-    border-radius: 3px; 
-    font-weight: 500;
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-silver:hover {
-    background-color: rgba(74, 53, 6, 0.18);
-    color: #ffffff;
-    border-color: #624708;
-}
-
-/* --- SUB BARRA DE NAVEGACIÓN --- */
-.sub-navbar {
-    background-color: #000000;
-    border-top: 2px solid #4a3506; 
-    padding: 15px 40px;
-    display: flex;
-    justify-content: center;
-}
-
+/* --- ACCESOS DE NAVEGACIÓN --- */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 35px;
+    justify-content: center;
+    gap: 30px;
     align-items: center;
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
+    flex: 1;
 }
 
 .nav-link {
+    font-family: 'New Rocker', cursive;
     text-decoration: none;
-    color: #cccccc; 
-    font-size: 17px;
+    color: #cccccc;
+    font-size: 18px;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative; 
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
+    letter-spacing: 1.2px;
+    position: relative;
+    padding: 6px 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link::after {
@@ -126,24 +114,85 @@ body {
     width: 0;
     height: 2px;
     bottom: 0;
-    left: 0;
-    background-color: #4a3506; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C9C9C9;
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after, 
+.nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
-.btn-agendar {
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* --- BOTÓN AGENDAR CITA EN NAVBAR --- */
+.btn-navbar-agendar {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'New Rocker', cursive;
+    text-decoration: none;
     color: #ffffff;
-    font-weight: 700;
+    border: 2px solid #8A8A8A;
+    padding: 11px 22px;
+    border-radius: 3px;
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-navbar-agendar::before,
+.hero-buttons .btn-hero:first-child::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.019c-.003 5.45-4.437 9.884-9.925 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.479-8.413Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.019c-.003 5.45-4.437 9.884-9.925 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.479-8.413Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.btn-navbar-agendar::before {
+    background-color: #ffffff;
+}
+
+.btn-navbar-agendar:hover {
+    background-color: rgba(201, 201, 201, 0.12);
+    color: #ffffff;
+    border-color: #C9C9C9;
+    transform: translateY(-2px);
+}
+
+/* --- BOTONES DE INICIAR SESIÓN / REGISTRO --- */
+.btn-outline-silver {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid #8A8A8A;
+    padding: 8px 22px;
+    border-radius: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-silver:hover {
+    background-color: rgba(138, 138, 138, 0.18);
+    color: #ffffff;
+    border-color: #C9C9C9;
 }
 
 /* =========================================
@@ -233,7 +282,7 @@ body {
 .input-icon { 
     position: absolute; 
     left: 12px; 
-    color: #4a3506 !important; 
+    color: #8A8A8A !important; 
     width: 18px; 
     height: 18px; 
     pointer-events: none; 
@@ -242,7 +291,7 @@ body {
 .toggle-password {
     position: absolute; 
     right: 12px; 
-    color: #4a3506; 
+    color: #8A8A8A; 
     width: 20px; 
     height: 20px; 
     cursor: pointer; 
@@ -270,7 +319,7 @@ body {
 }
 
 .custom-input:focus {
-    border-color: #4a3506 !important; 
+    border-color: #8A8A8A !important; 
     background-color: #1a1a1a !important;
     box-shadow: none !important;
     outline: none;
@@ -319,18 +368,18 @@ body {
 }
 
 .btn-back:hover { 
-    border-color: #4a3506 !important; 
-    color: #4a3506 !important; 
+    border-color: #8A8A8A !important; 
+    color: #8A8A8A !important; 
 }
 
 .btn-silver.gold-hover:hover { 
-    border-color: #4a3506 !important; 
-    color: #4a3506 !important; 
+    border-color: #8A8A8A !important; 
+    color: #8A8A8A !important; 
     background-color: transparent; 
 }
 
 .register-link {
-    color: #4a3506 !important;
+    color: #8A8A8A !important;
     font-weight: 700;
     text-decoration: none !important;
     transition: color 0.3s ease;
@@ -359,7 +408,7 @@ body {
 } 
 
 .hero-pretitle {
-    color: #4a3506; 
+    color: #8A8A8A; 
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -374,7 +423,7 @@ body {
     content: ""; 
     height: 1px; 
     width: 30px; 
-    background-color: #4a3506; 
+    background-color: #8A8A8A; 
 }
 
 .hero-title {
@@ -405,9 +454,9 @@ body {
 .btn-hero {
     display: flex; 
     align-items: center; 
-    gap: 0;
+    gap: 10px;
     background-color: transparent; 
-    border: 2px solid #4a3506; 
+    border: 2px solid #8A8A8A; 
     padding: 15px 30px;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -426,9 +475,18 @@ body {
     transition: color 0.3s ease;
 }
 
+.hero-buttons .btn-hero:first-child::before {
+    background-color: #aaaaaa;
+    transition: background-color 0.3s ease;
+}
+
+.hero-buttons .btn-hero:first-child:hover::before {
+    background-color: #ffffff;
+}
+
 .btn-hero:hover { 
-    background-color: rgba(95, 70, 8, 0.05); 
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.2); 
+    background-color: rgba(201, 201, 201, 0.05); 
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.20); 
 }
 
 .btn-hero:hover span {
@@ -450,7 +508,7 @@ body {
 
 .srv-card {
     background-color: #111;
-    border: 2px solid #4a3506; 
+    border: 2px solid #8A8A8A; 
     border-radius: 6px;
     padding: 30px 20px;
     position: relative;
@@ -465,7 +523,7 @@ body {
 
 .srv-card:hover { 
     transform: translateY(-10px); 
-    border-color: #624708; 
+    border-color: #C9C9C9; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
 }
 
@@ -526,7 +584,7 @@ body {
 .srv-line { 
     height: 2px; 
     width: 30px; 
-    background-color: #4a3506; 
+    background-color: #8A8A8A; 
     transition: width 0.3s; 
 }
 
@@ -592,7 +650,7 @@ body {
     display: flex; 
     align-items: center; 
     gap: 8px;
-    border: 2px solid #4a3506; 
+    border: 2px solid #8A8A8A; 
     color: #ffffff; 
     padding: 15px 30px;
     border-radius: 4px;
@@ -604,8 +662,13 @@ body {
 }
 
 .btn-outline-custom:hover { 
-    background-color: rgba(95, 70, 8, 0.1);
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+    background-color: rgba(201, 201, 201, 0.10);
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.30);
+}
+
+.about-text .btn-outline-custom {
+    display: inline-block;
+    width: max-content;
 }
 
 /* =========================================
@@ -640,7 +703,7 @@ body {
 }
 
 .footer-link svg {
-    color: #4a3506 !important;
+    color: #8A8A8A !important;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -654,7 +717,7 @@ body {
 }
 
 .footer-link:hover span {
-    color: #4a3506 !important;
+    color: #8A8A8A !important;
 }
 
 .footer-link:hover svg {
@@ -735,7 +798,7 @@ body {
 .nosotros-card {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 42px 35px;
     min-height: 280px;
@@ -745,7 +808,7 @@ body {
 }
 
 .nosotros-card:hover {
-    border-top-color: #624708;
+    border-top-color: #C9C9C9;
     transform: translateY(-5px);
     box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.9);
 }
@@ -772,7 +835,7 @@ body {
     background-color: rgba(13, 13, 13, 0.90);
     padding: 28px;
     border-radius: 8px;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(2px);
 }
@@ -911,7 +974,7 @@ body {
 .servicio-card-page {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 38px 28px;
     min-height: 285px;
@@ -924,7 +987,7 @@ body {
 }
 
 .servicio-card-page:hover {
-    border-top-color: #624708;
+    border-top-color: #C9C9C9;
     transform: translateY(-5px);
     box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.9);
 }
@@ -965,7 +1028,7 @@ body {
 .servicios-horarios-info {
     background-color: rgba(13, 13, 13, 0.88);
     border: 1px solid #222222;
-    border-left: 4px solid #4a3506;
+    border-left: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 38px 35px;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
@@ -975,7 +1038,7 @@ body {
 .servicios-mini-title {
     display: inline-block;
     font-family: 'Oswald', sans-serif;
-    color: #4a3506;
+    color: #8A8A8A;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -1004,7 +1067,7 @@ body {
 .servicios-schedule-card {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 38px 40px;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
@@ -1042,7 +1105,7 @@ body {
 .servicios-cta {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-left: 4px solid #4a3506;
+    border-left: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 35px 40px;
     text-align: center;
@@ -1060,7 +1123,7 @@ body {
 
 .btn-servicios-page {
     display: inline-block;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     color: #ffffff;
     padding: 13px 32px;
     border-radius: 4px;
@@ -1073,9 +1136,9 @@ body {
 }
 
 .btn-servicios-page:hover {
-    background-color: rgba(95, 70, 8, 0.15);
+    background-color: rgba(201, 201, 201, 0.15);
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.30);
 }
 
 @media (max-width: 1100px) {
@@ -1216,7 +1279,7 @@ body {
 
 .btn-galeria-page {
     display: inline-block;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     color: #ffffff;
     padding: 12px 30px;
     border-radius: 4px;
@@ -1229,9 +1292,9 @@ body {
 }
 
 .btn-galeria-page:hover {
-    background-color: rgba(95, 70, 8, 0.15);
+    background-color: rgba(201, 201, 201, 0.15);
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.30);
 }
 
 .galeria-grid {
@@ -1397,7 +1460,7 @@ body {
 .contacto-card {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 40px 32px;
     min-height: 315px;
@@ -1410,13 +1473,13 @@ body {
 }
 
 .contacto-card:hover {
-    border-top-color: #624708;
+    border-top-color: #C9C9C9;
     transform: translateY(-6px);
     box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.9);
 }
 
 .contacto-icon {
-    color: #4a3506;
+    color: #8A8A8A;
     margin-bottom: 20px;
 }
 
@@ -1455,7 +1518,7 @@ body {
 .contacto-info-box {
     background-color: rgba(13, 13, 13, 0.90);
     border: 1px solid #222222;
-    border-left: 4px solid #4a3506;
+    border-left: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 35px 38px;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
@@ -1483,7 +1546,7 @@ body {
 .btn-contacto-page {
     display: inline-block;
     margin-top: 22px;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     color: #ffffff;
     padding: 12px 30px;
     border-radius: 4px;
@@ -1496,16 +1559,16 @@ body {
 }
 
 .btn-contacto-page:hover {
-    background-color: rgba(95, 70, 8, 0.15);
+    background-color: rgba(201, 201, 201, 0.15);
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.30);
 }
 
 .contacto-mini-map {
     width: 100%;
     height: 230px;
     margin-top: 25px;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.75);
@@ -1543,7 +1606,7 @@ body {
 .contacto-paso span {
     font-family: 'New Rocker', cursive;
     font-size: 26px;
-    color: #4a3506;
+    color: #8A8A8A;
     min-width: 45px;
 }
 
@@ -1655,7 +1718,7 @@ body {
 .agendar-form-box {
     background-color: rgba(13, 13, 13, 0.92);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 45px 42px;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
@@ -1695,7 +1758,7 @@ body {
 
 .agendar-user-info {
     background-color: rgba(8, 8, 8, 0.90);
-    border-left: 4px solid #4a3506;
+    border-left: 4px solid #8A8A8A;
     padding: 18px 20px;
     border-radius: 6px;
     margin-bottom: 30px;
@@ -1753,8 +1816,8 @@ body {
 .form-group-agendar input:focus,
 .form-group-agendar select:focus,
 .form-group-agendar textarea:focus {
-    border-color: #4a3506;
-    box-shadow: 0 0 12px rgba(95, 70, 8, 0.25);
+    border-color: #8A8A8A;
+    box-shadow: 0 0 12px rgba(201, 201, 201, 0.25);
 }
 
 .form-group-agendar textarea {
@@ -1763,7 +1826,7 @@ body {
 
 .btn-agendar-page {
     display: inline-block;
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     background-color: transparent;
     color: #ffffff;
     padding: 14px 32px;
@@ -1783,9 +1846,9 @@ button.btn-agendar-page {
 }
 
 .btn-agendar-page:hover {
-    background-color: rgba(95, 70, 8, 0.15);
+    background-color: rgba(201, 201, 201, 0.15);
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(95, 70, 8, 0.3);
+    box-shadow: 0 0 15px rgba(201, 201, 201, 0.30);
 }
 
 .btn-agendar-secondary {
@@ -1793,7 +1856,7 @@ button.btn-agendar-page {
 }
 
 .btn-agendar-secondary:hover {
-    border-color: #4a3506;
+    border-color: #8A8A8A;
 }
 
 @media (max-width: 768px) {
@@ -1874,7 +1937,7 @@ button.btn-agendar-page {
 .admin-panel {
     background-color: rgba(13, 13, 13, 0.92);
     border: 1px solid #222222;
-    border-top: 4px solid #4a3506;
+    border-top: 4px solid #8A8A8A;
     border-radius: 8px;
     padding: 35px;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.75);
@@ -1899,7 +1962,7 @@ button.btn-agendar-page {
 }
 
 .btn-admin {
-    border: 2px solid #4a3506;
+    border: 2px solid #8A8A8A;
     background-color: transparent;
     color: #ffffff;
     padding: 12px 28px;
@@ -1914,9 +1977,9 @@ button.btn-agendar-page {
 }
 
 .btn-admin:hover {
-    background-color: rgba(74, 53, 6, 0.18);
+    background-color: rgba(138, 138, 138, 0.18);
     color: #ffffff;
-    box-shadow: 0 0 15px rgba(74, 53, 6, 0.35);
+    box-shadow: 0 0 15px rgba(138, 138, 138, 0.35);
 }
 
 .admin-mensaje {
@@ -1949,7 +2012,7 @@ button.btn-agendar-page {
     letter-spacing: 1px;
     font-size: 15px;
     padding: 15px 14px;
-    border-bottom: 2px solid #4a3506;
+    border-bottom: 2px solid #8A8A8A;
     white-space: nowrap;
 }
 
@@ -1972,7 +2035,7 @@ button.btn-agendar-page {
 .estado-cita {
     display: inline-block;
     padding: 6px 12px;
-    border: 1px solid #4a3506;
+    border: 1px solid #8A8A8A;
     border-radius: 4px;
     color: #ffffff;
     font-size: 14px;
@@ -2068,6 +2131,7 @@ img {
         flex-direction: column;
         gap: 18px;
         align-items: center;
+        background-position: center;
     }
 
     .brand-container a,
@@ -2086,22 +2150,8 @@ img {
         font-size: 13px;
     }
 
-    .auth-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .btn-outline-silver {
-        padding: 9px 18px;
-        font-size: 14px;
-    }
-
-    .sub-navbar {
-        padding: 12px 15px;
-    }
-
     .nav-links {
+        width: 100%;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
@@ -2111,6 +2161,11 @@ img {
     .nav-link {
         font-size: 15px;
         padding: 9px 12px;
+    }
+
+    .btn-navbar-agendar {
+        padding: 9px 18px;
+        font-size: 14px;
     }
 
     /* INDEX - HERO */
@@ -2222,6 +2277,7 @@ img {
 
     .main-navbar {
         padding: 16px 18px;
+        gap: 16px;
     }
 
     .logo {
@@ -2238,39 +2294,12 @@ img {
         font-size: 12px;
     }
 
-    .auth-buttons {
-        width: 100%;
-        gap: 10px;
-    }
-
-    .auth-buttons span {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        margin-right: 0 !important;
-        font-size: 15px !important;
-    }
-
-    .btn-outline-silver {
-        flex: 1;
-        min-width: 130px;
-        text-align: center;
-        font-size: 13px;
-        padding: 9px 12px;
-    }
-
-    .sub-navbar {
-        padding: 10px 12px;
-        overflow-x: auto;
-    }
-
     .nav-links {
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
-        width: max-content;
-        min-width: 100%;
+        width: 100%;
         padding: 0 5px;
     }
 
@@ -2284,8 +2313,12 @@ img {
         white-space: nowrap;
     }
 
-    .btn-agendar {
-        padding: 8px 12px !important;
+    .btn-navbar-agendar {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 14px;
     }
 
     /* INDEX - HERO */
@@ -2713,12 +2746,17 @@ img {
         height: 50px;
     }
 
-    .auth-buttons {
-        flex-direction: column;
+    .nav-links {
+        gap: 5px;
     }
 
-    .btn-outline-silver {
-        width: 100%;
+    .nav-link {
+        font-size: 13px;
+        padding: 7px 8px;
+    }
+
+    .btn-navbar-agendar {
+        max-width: 100%;
     }
 
     .hero-title,

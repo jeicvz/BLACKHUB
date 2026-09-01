@@ -1,3 +1,4 @@
+require('dotenv').config();
 // index.js
 const express = require('express');
 const { Pool } = require('pg');
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Configuración de PostgreSQL
+console.log('DATABASE_URL cargada:', !!process.env.DATABASE_URL);
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
