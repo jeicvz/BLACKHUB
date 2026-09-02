@@ -556,7 +556,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-    background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.95)), url('/images/lgblck.png') center/cover no-repeat;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+        url('/images/bckgrnd.jpg') center/cover no-repeat;
 }
 
 .about-text .hero-pretitle { 
@@ -608,9 +610,11 @@ body {
     color: #ffffff; 
     padding: 15px 30px;
     border-radius: 4px;
-    font-weight: 700;
+    font-family: 'New Rocker', cursive;
+    font-weight: 400;
     font-size: 16px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     transition: all 0.3s;
     background-color: transparent;
 }
