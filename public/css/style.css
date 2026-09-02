@@ -502,7 +502,9 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: none;
-    margin-bottom: 20px; 
+    display: block;
+    align-self: center;
+    margin: 0 auto 20px auto;
     filter: grayscale(20%);
     transition: transform 0.3s ease, filter 0.3s ease; 
 }
@@ -558,9 +560,20 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-    background:
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
-        url('/images/bckgrnd.jpg') center/cover no-repeat;
+        url('/images/bckgrnd.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .about-text .hero-pretitle { 
@@ -587,8 +600,9 @@ body {
 
 .about-images {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
+    align-items: stretch;
 }
 
 .about-img {
@@ -627,7 +641,7 @@ body {
 }
 
 .about-text .btn-outline-custom {
-    display: inline-block;
+    display: inline-flex;
     width: max-content;
 }
 
