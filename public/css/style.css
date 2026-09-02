@@ -1,6 +1,3 @@
-/* Importando tipografías callejeras y elegantes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=New+Rocker&family=Oswald:wght@300;400;500;700&display=swap');
-
 /* Reseteo básico */
 * {
     margin: 0;
@@ -19,7 +16,8 @@ a:hover {
 }
 
 body {
-    font-family: 'Oswald', sans-serif; 
+    font-family: 'Grenze', serif;
+    font-size: 17px;
     background-color: #080808; 
     color: #ffffff;
 }
@@ -77,7 +75,7 @@ body {
 }
 
 .brand-subtitle {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     color: #555555;
     font-size: 14px;
     letter-spacing: 4px;
@@ -155,8 +153,7 @@ body {
     white-space: nowrap;
 }
 
-.btn-navbar-agendar::before,
-.hero-buttons .btn-hero:first-child::before {
+.btn-navbar-agendar::before {
     content: '';
     width: 20px;
     height: 20px;
@@ -267,7 +264,7 @@ body {
     display: block; 
     color: #ffffff !important; 
     margin-bottom: 0.5rem; 
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -339,7 +336,7 @@ body {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -437,60 +434,13 @@ body {
 }
 
 .hero-desc {
-    color: #aaaaaa;
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.hero-buttons { 
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
-    margin-bottom: 50px; 
-}
-
-.btn-hero {
-    display: flex; 
-    align-items: center; 
-    gap: 10px;
-    background-color: transparent; 
-    border: 2px solid #8A8A8A; 
-    padding: 15px 30px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.btn-hero svg {
-    display: none;
-}
-
-.btn-hero span {
-    color: #aaaaaa; 
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.hero-buttons .btn-hero:first-child::before {
-    background-color: #aaaaaa;
-    transition: background-color 0.3s ease;
-}
-
-.hero-buttons .btn-hero:first-child:hover::before {
-    background-color: #ffffff;
-}
-
-.btn-hero:hover { 
-    background-color: rgba(201, 201, 201, 0.05); 
-    box-shadow: 0 0 15px rgba(201, 201, 201, 0.20); 
-}
-
-.btn-hero:hover span {
-    color: #ffffff; 
+    font-family: 'Grenze', serif;
+    color: #c7c7c7;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.5;
+    max-width: 760px;
 }
 
 .services-section {
@@ -516,7 +466,7 @@ body {
     min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-decoration: none; 
 }
@@ -564,28 +514,32 @@ body {
     display: none;
 }
 
-.srv-title { 
-    font-size: 20px; 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    margin: 0 0 10px 0; 
-    color: #fff; 
+.srv-title {
+    font-family: 'New Rocker', cursive;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
-.srv-desc { 
-    font-size: 14px; 
-    color: #888; 
-    font-weight: 300; 
-    margin: 0 0 15px 0; 
-    line-height: 1.4; 
-    transition: color 0.3s; 
+.srv-desc {
+    font-family: 'Grenze', serif;
+    font-size: 16px;
+    color: #a7a7a7;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    line-height: 1.45;
+    transition: color 0.3s;
 }
 
-.srv-line { 
-    height: 2px; 
-    width: 30px; 
-    background-color: #8A8A8A; 
-    transition: width 0.3s; 
+.srv-line {
+    height: 2px;
+    width: 30px;
+    background-color: #8A8A8A;
+    transition: width 0.3s;
+    margin-top: auto;
 }
 
 .srv-card:hover .srv-line { 
@@ -694,7 +648,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
@@ -774,7 +728,7 @@ body {
 }
 
 .nosotros-text {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -814,7 +768,7 @@ body {
 }
 
 .nosotros-subtitle {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 28px;
     color: #ffffff;
     text-transform: uppercase;
@@ -841,7 +795,7 @@ body {
 }
 
 .nosotros-map-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 26px;
     color: #6b6b6b;
     margin-bottom: 22px;
@@ -955,7 +909,7 @@ body {
 }
 
 .servicios-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1001,7 +955,7 @@ body {
 }
 
 .servicio-descripcion {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     color: #bfbfbf;
     line-height: 1.6;
@@ -1037,7 +991,7 @@ body {
 
 .servicios-mini-title {
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     color: #8A8A8A;
     font-size: 14px;
     text-transform: uppercase;
@@ -1055,7 +1009,7 @@ body {
 }
 
 .servicios-horarios-info p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 18px;
     color: #cccccc;
     line-height: 1.7;
@@ -1080,7 +1034,7 @@ body {
     align-items: center;
     padding: 18px 0;
     border-bottom: 1px solid #1f1f1f;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     letter-spacing: 1px;
 }
 
@@ -1114,7 +1068,7 @@ body {
 }
 
 .servicios-cta p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 20px;
     color: #cccccc;
     margin-bottom: 25px;
@@ -1127,7 +1081,7 @@ body {
     color: #ffffff;
     padding: 13px 32px;
     border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1256,7 +1210,7 @@ body {
 }
 
 .galeria-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1270,7 +1224,7 @@ body {
 }
 
 .galeria-mini-cta p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 18px;
     color: #cccccc;
     margin-bottom: 18px;
@@ -1283,7 +1237,7 @@ body {
     color: #ffffff;
     padding: 12px 30px;
     border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1441,7 +1395,7 @@ body {
 }
 
 .contacto-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1492,7 +1446,7 @@ body {
 }
 
 .contacto-card p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     color: #bfbfbf;
     line-height: 1.6;
@@ -1502,7 +1456,7 @@ body {
 }
 
 .contacto-card span {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 17px;
     color: #6b6b6b;
     font-weight: 700;
@@ -1534,7 +1488,7 @@ body {
 }
 
 .contacto-info-box p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 18px;
     color: #cccccc;
     line-height: 1.7;
@@ -1550,7 +1504,7 @@ body {
     color: #ffffff;
     padding: 12px 30px;
     border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1611,7 +1565,7 @@ body {
 }
 
 .contacto-paso p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     color: #cccccc;
     margin: 0;
@@ -1705,7 +1659,7 @@ body {
 }
 
 .agendar-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1739,7 +1693,7 @@ body {
 }
 
 .agendar-login-box p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1762,7 +1716,7 @@ body {
     padding: 18px 20px;
     border-radius: 6px;
     margin-bottom: 30px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     letter-spacing: 1px;
 }
 
@@ -1789,7 +1743,7 @@ body {
 
 .form-group-agendar label {
     display: block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 15px;
     color: #ffffff;
     text-transform: uppercase;
@@ -1806,7 +1760,7 @@ body {
     color: #ffffff;
     border-radius: 4px;
     padding: 12px 14px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     letter-spacing: 1px;
     outline: none;
@@ -1831,7 +1785,7 @@ body {
     color: #ffffff;
     padding: 14px 32px;
     border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1925,7 +1879,7 @@ button.btn-agendar-page {
 }
 
 .admin-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 19px;
     color: #cccccc;
     line-height: 1.7;
@@ -1967,7 +1921,7 @@ button.btn-agendar-page {
     color: #ffffff;
     padding: 12px 28px;
     border-radius: 4px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1983,7 +1937,7 @@ button.btn-agendar-page {
 }
 
 .admin-mensaje {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     color: #cccccc;
     font-size: 17px;
     letter-spacing: 1px;
@@ -1998,7 +1952,7 @@ button.btn-agendar-page {
 .admin-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     min-width: 1000px;
 }
 
@@ -2079,7 +2033,7 @@ button.btn-agendar-page {
 }
 
 .forgot-password-link {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     font-size: 15px;
     color: #cccccc;
     text-decoration: none;
@@ -2097,7 +2051,7 @@ button.btn-agendar-page {
 }
 
 .recuperar-desc {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Grenze', serif;
     color: #cccccc;
     font-size: 16px;
     letter-spacing: 1px;
@@ -2187,13 +2141,9 @@ img {
     }
 
     .hero-desc {
-        font-size: 20px;
-        margin: 25px auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
+        font-size: 21px;
+        margin: 25px auto 12px auto;
+        text-align: center;
     }
 
     /* INDEX - SERVICIOS CARDS */
@@ -2344,23 +2294,10 @@ img {
     }
 
     .hero-desc {
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 22px auto;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 14px;
-    }
-
-    .btn-hero {
-        width: 100%;
-        justify-content: center;
+        font-size: 19px;
+        line-height: 1.5;
+        margin: 22px auto 10px auto;
         text-align: center;
-        padding: 13px 18px;
     }
 
     /* INDEX - CARDS */
@@ -2379,11 +2316,12 @@ img {
     }
 
     .srv-title {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .srv-desc {
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.45;
     }
 
     /* INDEX - ABOUT */
